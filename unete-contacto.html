@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Únete/Contacto - Interact Club Encarnación Norte</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo-interact.png" alt="Logo del Interact Club Encarnación Norte">
+            </a>
+        </div>
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema">
+            <i class="fas fa-moon"></i> </button>
+        <ul class="menu-principal">
+            </ul>
+        <ul class="menu-principal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="quienes-somos.html">Quiénes somos</a></li>
+            <li><a href="comites-proyectos.html">Comités y Proyectos</a></li>
+            <li><a href="unete-contacto.html" aria-current="page">Únete/Contacto</a></li>
+            <li><a href="https://rotaryencarnacionnorte.weebly.com/" target="_blank" rel="noopener noreferrer">Rotary Patrocinador</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="pasos-unirse" class="section-padding">
+        <h2 class="section-title">Tu Aventura Comienza Aquí</h2>
+        <p class="section-subtitle">Unirse a Interact es un proceso sencillo y gratificante. ¡Estos son los pasos!</p>
+        <div class="pasos-grid">
+            <div class="paso-card">
+                <div class="paso-numero">1</div>
+                <h3>Cumple los Requisitos</h3>
+                <p>Tener entre 12 y 18 años, muchas ganas de aprender, hacer amigos y servir a la comunidad.</p>
+            </div>
+            <div class="paso-card">
+                <div class="paso-numero">2</div>
+                <h3>Asiste a una Reunión</h3>
+                <p>¡La mejor forma de conocernos! Ven como aspirante a una de nuestras reuniones para ver cómo trabajamos.</p>
+            </div>
+            <div class="paso-card">
+                <div class="paso-numero">3</div>
+                <h3>Participa y Únete</h3>
+                <p>Participa en nuestras actividades, conoce al equipo y, cuando estés listo, formaliza tu membresía.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto-info" class="section-padding">
+        <div class="contacto-container">
+            <div class="info-box">
+                <h3><i class="fas fa-map-marker-alt"></i> Visítanos</h3>
+                <p>Nos reunimos todos los sábados para planificar, aprender y compartir. ¡Tu primera visita es bienvenida!</p>
+                <div class="info-item">
+                    <h4><i class="fas fa-clock"></i> Horario</h4>
+                    <p>Sábados, 17:30 hs.</p>
+                </div>
+                <div class="info-item">
+                    <h4><i class="fas fa-map-pin"></i> Ubicación</h4>
+                    <p>Casa de la Amistad (Sede del Rotary Club Encarnación Norte), Encarnación, Paraguay</p>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.923831872813!2d-55.86992988495886!3d-26.7466854832001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945795c65f9b1d7d%3A0x6342b3234d6d6a2a!2sRotary%20Club%20Encarnaci%C3%B3n!5e0!3m2!1ses!2spy!4v1693830000000!5m2!1ses!2spy" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div class="form-box">
+                <h3><i class="fas fa-envelope"></i> Escríbenos</h3>
+                <p>¿Tienes dudas o quieres avisarnos de tu visita? Completa el formulario y te responderemos a la brevedad.</p>
+                <form id="contact-form" action="https://formspree.io/f/xovllwwp" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                        <span class="error-message" id="nombre-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required>
+                        <span class="error-message" id="asunto-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        <span class="error-message" id="mensaje-error"></span>
+                    </div>
+                    <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                    <div id="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <footer>
+        <p>© 2025 Interact Club Encarnación Norte. Todos los derechos reservados.</p>
+        <div class="redes-sociales-footer">
+            <a href="https://www.tiktok.com/@interact.enc.nort?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://www.instagram.com/interact_enc_norte/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
