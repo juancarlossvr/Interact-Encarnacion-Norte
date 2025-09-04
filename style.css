@@ -1625,37 +1625,43 @@ a:focus, button:focus, input:focus, textarea:focus {
 }
 
 
+/* ============================================= */
+/* --- REFINAMIENTO PARA DISPOSITIVOS MÓVILES --- */
+/* ============================================= */
+
 @media (max-width: 768px) {
 
-    /* 1. Tipografía más cómoda para leer */
-    h1 {
-        font-size: 2.2rem; /* Reducimos el título principal para que no ocupe toda la pantalla */
-    }
-    
-    .section-title {
-        font-size: 2rem; /* Hacemos los títulos de sección un poco más pequeños */
-    }
-    
-    body, p {
-        font-size: 16px; /* Aseguramos un tamaño de letra base legible */
-        line-height: 1.7; /* Aumentamos el espacio entre líneas para facilitar la lectura */
+    /* 1. Tipografía */
+    h1 { font-size: 2.2rem; }
+    .section-title { font-size: 2rem; }
+    body, p { font-size: 16px; line-height: 1.7; }
+
+    /* 2. Espaciado */
+    .section-padding { padding: var(--space-xl) var(--space-md); }
+    main { padding-top: 70px; }
+    nav { height: 70px; }
+
+    /* 3. Menú de Navegación (LA SOLUCIÓN CLAVE) */
+    .menu-toggle, .theme-toggle-btn {
+        display: block; /* Muestra el botón de hamburguesa y tema */
     }
 
-    /* 2. Espaciado más compacto y agradable */
-    .section-padding {
-        /* Reducimos el padding vertical en móviles para no tener que hacer tanto scroll */
-        padding: var(--space-xl) var(--space-md); 
+    .menu-principal {
+        display: none; /* Oculta el menú por defecto */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--rotary-blue-dark);
+        position: absolute;
+        top: 70px; /* Justo debajo del header */
+        left: 0;
+        z-index: 999; /* Se asegura que esté por encima de otro contenido */
     }
     
-    main {
-        padding-top: 70px; /* Reducimos el espacio superior si el header es más pequeño en móvil */
+    .menu-principal.active {
+        display: flex; /* MUESTRA el menú cuando tiene la clase 'active' */
     }
-    
-    nav {
-        height: 70px; /* Hacemos el header un poco más compacto */
-    }
-    
-    
+
+    /* 4. Otros Ajustes */
     .tiempo-unidad span {
         font-size: 2rem;
         padding: var(--space-xs) var(--space-sm);
@@ -1663,18 +1669,11 @@ a:focus, button:focus, input:focus, textarea:focus {
     }
     
     .btn-primary, .btn-secondary {
-        padding: 14px 24px; 
+        padding: 14px 24px;
         font-size: 1rem;
     }
-
-    .content-with-image {
-        flex-direction: column; 
-    }
-    .content-with-image.reverse-order {
-        flex-direction: column-reverse; 
-    }
     
-    .contacto-container {
-        grid-template-columns: 1fr; 
-    }
+    .content-with-image { flex-direction: column; }
+    .content-with-image.reverse-order { flex-direction: column-reverse; }
+    .contacto-container { grid-template-columns: 1fr; }
 }

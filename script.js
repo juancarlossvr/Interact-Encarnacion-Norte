@@ -1,5 +1,10 @@
+// ==================================================================
+//          SCRIPT.JS UNIFICADO Y CORREGIDO (VERSIÓN FINAL)
+// ==================================================================
+
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- LÓGICA PARA EL MENÚ MÓVIL (HAMBURGUESA) ---
     const menuToggle = document.querySelector('.menu-toggle');
     const menuPrincipal = document.querySelector('.menu-principal');
 
@@ -13,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- LÓGICA PARA EL FORMULARIO DE CONTACTO ---
     const contactForm = document.getElementById('contact-form');
-    
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             if (!validateForm()) {
@@ -104,24 +108,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const horasEl = document.getElementById('horas');
         const minutosEl = document.getElementById('minutos');
         const segundosEl = document.getElementById('segundos');
-
         if (!diasEl) return;
-
         const intervalo = setInterval(() => {
             const ahora = new Date().getTime();
             const distancia = fechaLimite - ahora;
-
             if (distancia < 0) {
                 clearInterval(intervalo);
                 document.getElementById('countdown-timer').innerHTML = "<h4>¡El plazo ha terminado!</h4>";
                 return;
             }
-
             const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
             const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
             const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
             diasEl.innerText = dias < 10 ? '0' + dias : dias;
             horasEl.innerText = horas < 10 ? '0' + horas : horas;
             minutosEl.innerText = minutos < 10 ? '0' + minutos : minutos;
@@ -129,5 +128,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     };
     iniciarContador();
-
-}); 
+});
