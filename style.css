@@ -1677,3 +1677,7 @@ a:focus, button:focus, input:focus, textarea:focus {
     .content-with-image.reverse-order { flex-direction: column-reverse; }
     .contacto-container { grid-template-columns: 1fr; }
 }
+
+html {
+    scroll-behavior: smooth;
+}
