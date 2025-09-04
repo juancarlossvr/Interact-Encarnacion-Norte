@@ -109,3 +109,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+
+    const iniciarContador = () => {
+        const fechaLimite = new Date('September 13, 2025 17:00:00').getTime();
+        
+        const diasEl = document.getElementById('dias');
+        const horasEl = document.getElementById('horas');
+        const minutosEl = document.getElementById('minutos');
+        const segundosEl = document.getElementById('segundos');
+
+        if (!diasEl) return;
+
+        const intervalo = setInterval(() => {
+            const ahora = new Date().getTime();
+            const distancia = fechaLimite - ahora;
+
+            if (distancia < 0) {
+                clearInterval(intervalo);
+                document.getElementById('countdown-timer').innerHTML = "<h4>¡El plazo ha terminado!</h4>";
+                return;
+            }
+
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            diasEl.innerText = dias < 10 ? '0' + dias : dias;
+            horasEl.innerText = horas < 10 ? '0' + horas : horas;
+            minutosEl.innerText = minutos < 10 ? '0' + minutos : minutos;
+            segundosEl.innerText = segundos < 10 ? '0' + segundos : segundos;
+
+        }, 1000);
+    };
+
+    iniciarContador();
+});

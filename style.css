@@ -1561,3 +1561,65 @@ a:focus, button:focus, input:focus, textarea:focus {
     padding: var(--space-md);
   }
 }
+
+#convocatoria {
+    background-color: var(--background-secondary);
+}
+
+.convocatoria-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .convocatoria-container {
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+        align-items: center;
+    }
+}
+
+.convocatoria-texto h2 {
+    color: var(--rotary-blue);
+    margin-top: 0;
+}
+
+.convocatoria-contador h3 {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: var(--space-sm);
+    text-align: center;
+}
+
+#countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+.tiempo-unidad {
+    text-align: center;
+}
+
+.tiempo-unidad span {
+    display: block;
+    background-color: var(--background-card);
+    color: var(--rotary-blue);
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    min-width: 60px; 
+}
+
+.tiempo-unidad p {
+    margin-top: var(--space-xs);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
