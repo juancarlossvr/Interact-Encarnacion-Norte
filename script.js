@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- LÓGICA PARA EL FORMULARIO DE CONTACTO ---
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
@@ -24,13 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function validateForm() {
         let isValid = true;
         clearErrors();
-
         const nombre = document.getElementById('nombre');
         if (nombre && nombre.value.trim() === '') {
             showError('nombre', 'Por favor, ingresa tu nombre.');
             isValid = false;
         }
-
         const email = document.getElementById('email');
         if (email && email.value.trim() === '') {
             showError('email', 'Por favor, ingresa tu correo electrónico.');
@@ -39,19 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
             showError('email', 'Por favor, ingresa un correo electrónico válido.');
             isValid = false;
         }
-
         const asunto = document.getElementById('asunto');
         if (asunto && asunto.value.trim() === '') {
             showError('asunto', 'Por favor, ingresa el asunto.');
             isValid = false;
         }
-
         const mensaje = document.getElementById('mensaje');
         if (mensaje && mensaje.value.trim() === '') {
             showError('mensaje', 'Por favor, ingresa tu mensaje.');
             isValid = false;
         }
-
         return isValid;
     }
 
@@ -72,11 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return emailRegex.test(email);
     }
 
+    // --- LÓGICA PARA EL MODO OSCURO (DARK MODE) ---
     const themeToggle = document.getElementById('theme-toggle');
-
     if (themeToggle) {
         const themeIcon = themeToggle.querySelector('i');
-
         const applyTheme = (theme) => {
             if (theme === 'dark') {
                 document.body.classList.add('dark-mode');
@@ -92,10 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         };
-
         const savedTheme = localStorage.getItem('theme') || 'light';
         applyTheme(savedTheme);
-
         themeToggle.addEventListener('click', () => {
             const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -103,14 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
             applyTheme(newTheme);
         });
     }
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-
+    // --- LÓGICA PARA EL CONTADOR DE LA CONVOCATORIA ---
     const iniciarContador = () => {
         const fechaLimite = new Date('September 13, 2025 17:00:00').getTime();
-        
         const diasEl = document.getElementById('dias');
         const horasEl = document.getElementById('horas');
         const minutosEl = document.getElementById('minutos');
@@ -137,9 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
             horasEl.innerText = horas < 10 ? '0' + horas : horas;
             minutosEl.innerText = minutos < 10 ? '0' + minutos : minutos;
             segundosEl.innerText = segundos < 10 ? '0' + segundos : segundos;
-
         }, 1000);
     };
-
     iniciarContador();
-});
+
+}); 

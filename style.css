@@ -1444,7 +1444,7 @@ a:focus, button:focus, input:focus, textarea:focus {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .content-with-image {
     flex-direction: column;
     text-align: center;
@@ -1476,16 +1476,16 @@ a:focus, button:focus, input:focus, textarea:focus {
   }
 
   nav .menu-principal {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--background-card);
-    position: absolute;
-    top: 80px;
-    left: 0;
-    box-shadow: 0 4px 12px var(--shadow-color);
-    padding: var(--space-sm) 0;
-  }
+     display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--rotary-blue-dark);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: var(--space-sm) 0;
+    }
+
   
   nav .menu-principal.active {
     display: flex;
