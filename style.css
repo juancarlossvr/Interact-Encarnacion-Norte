@@ -1660,6 +1660,29 @@ a:focus, button:focus, input:focus, textarea:focus {
     .menu-principal.active {
         display: flex; /* MUESTRA el menú cuando tiene la clase 'active' */
     }
+    
+    .menu-principal li {
+    width: 100%; /* Asegura que cada elemento ocupe todo el ancho */
+    text-align: center; /* Centra el texto del enlace */
+}
+
+.menu-principal li a {
+    display: block; /* Hace que toda el área sea clickeable */
+    padding: 1.2rem 0; /* Añade espacio vertical para tocarlo fácilmente */
+    color: var(--background-primary); /* Color de texto blanco y legible */
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--rotary-blue); /* Línea sutil para separar enlaces */
+    transition: background-color 0.3s ease;
+}
+
+.menu-principal li a:hover {
+    background-color: var(--rotary-blue); /* Efecto visual al pasar el ratón/tocar */
+}
+
+.menu-principal li:last-child a {
+    border-bottom: none; /* Elimina la línea del último elemento */
+}
 
     /* 4. Otros Ajustes */
     .tiempo-unidad span {
