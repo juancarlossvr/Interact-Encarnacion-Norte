@@ -1623,3 +1623,58 @@ a:focus, button:focus, input:focus, textarea:focus {
     color: var(--text-muted);
     font-weight: 500;
 }
+
+
+@media (max-width: 768px) {
+
+    /* 1. Tipografía más cómoda para leer */
+    h1 {
+        font-size: 2.2rem; /* Reducimos el título principal para que no ocupe toda la pantalla */
+    }
+    
+    .section-title {
+        font-size: 2rem; /* Hacemos los títulos de sección un poco más pequeños */
+    }
+    
+    body, p {
+        font-size: 16px; /* Aseguramos un tamaño de letra base legible */
+        line-height: 1.7; /* Aumentamos el espacio entre líneas para facilitar la lectura */
+    }
+
+    /* 2. Espaciado más compacto y agradable */
+    .section-padding {
+        /* Reducimos el padding vertical en móviles para no tener que hacer tanto scroll */
+        padding: var(--space-xl) var(--space-md); 
+    }
+    
+    main {
+        padding-top: 70px; /* Reducimos el espacio superior si el header es más pequeño en móvil */
+    }
+    
+    nav {
+        height: 70px; /* Hacemos el header un poco más compacto */
+    }
+    
+    
+    .tiempo-unidad span {
+        font-size: 2rem;
+        padding: var(--space-xs) var(--space-sm);
+        min-width: 50px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 14px 24px; 
+        font-size: 1rem;
+    }
+
+    .content-with-image {
+        flex-direction: column; 
+    }
+    .content-with-image.reverse-order {
+        flex-direction: column-reverse; 
+    }
+    
+    .contacto-container {
+        grid-template-columns: 1fr; 
+    }
+}

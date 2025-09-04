@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- LÓGICA PARA EL MENÚ MÓVIL (HAMBURGUESA) ---
     const menuToggle = document.querySelector('.menu-toggle');
     const menuPrincipal = document.querySelector('.menu-principal');
 
@@ -12,15 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- LÓGICA MEJORADA PARA EL FORMULARIO DE CONTACTO ---
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
-            // Si el action del form es para Formspree, dejamos que se envíe.
-            // La validación la hacemos para evitar envíos vacíos.
             if (!validateForm()) {
-                event.preventDefault(); // Detener el envío SOLO si la validación falla
+                event.preventDefault();
             }
         });
     }
@@ -76,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return emailRegex.test(email);
     }
 
-    // --- LÓGICA PARA EL MODO OSCURO (DARK MODE) ---
     const themeToggle = document.getElementById('theme-toggle');
 
     if (themeToggle) {
