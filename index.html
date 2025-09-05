@@ -15,40 +15,43 @@
 </head>
 <body>
 <header>
-    <nav>
-        <div class="logo">
-            <a href="index.html">
-                <img src="img/logo-interact.png" alt="Logo del Interact Club Encarnación Norte">
-            </a>
-        </div>
-        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
-        <i class="fas fa-bars"></i>
-        </button>
+<nav>
+    <div class="logo">
+        <a href="index.html">
+            <img src="img/logo-interact.png" alt="Logo del Interact Club Encarnación Norte">
+        </a>
+    </div>
 
+    <div class="nav-actions">
         <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema">
-        <i class="fas fa-moon"></i>
+            <i class="fas fa-moon"></i>
         </button>
-        
-        <ul class="menu-principal" id="menu-principal">
-            <li><a href="index.html" aria-current="page">Inicio</a></li>
-            <li class="dropdown">
-                <a href="quienes-somos.html">Quiénes somos</a>
-                <div class="dropdown-content">
-                    <a href="quienes-somos.html#que-es">¿Qué es Interact?</a>
-                    <a href="quienes-somos.html#mision-vision">Misión y Visión</a>
-                    <a href="quienes-somos.html#junta-directiva">Junta Directiva</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="comites-proyectos.html">Comités y Proyectos</a>
-                <div class="dropdown-content">
-                    <a href="comites-proyectos.html#comites">Nuestros Comités</a>
-                    <a href="comites-proyectos.html#proyectos">Proyectos Destacados</a>
-                </div>
-            </li>
-            <li><a href="unete-contacto.html">Únete/Contacto</a></li>
-        </ul>
-    </nav>
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    
+    <ul class="menu-principal" id="menu-principal">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="dropdown">
+            <a href="quienes-somos.html">Quiénes somos</a>
+            <div class="dropdown-content">
+                <a href="quienes-somos.html#que-es">¿Qué es Interact?</a>
+                <a href="quienes-somos.html#mision-vision">Misión y Visión</a>
+                <a href="quienes-somos.html#junta-directiva">Junta Directiva</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="comites-proyectos.html">Comités y Proyectos</a>
+            <div class="dropdown-content">
+                <a href="comites-proyectos.html#comites">Nuestros Comités</a>
+                <a href="comites-proyectos.html#proyectos">Proyectos Destacados</a>
+            </div>
+        </li>
+        <li><a href="calendario.html">Calendario</a></li> 
+        <li><a href="unete-contacto.html">Únete/Contacto</a></li>
+    </ul>
+</nav>
 </header>
 
 <main>
@@ -184,6 +187,8 @@
         </a>
     </div>
 </footer>
+
+<script src="https://unpkg.com/scrollreveal"></script> 
 
 <script src="script.js"></script>
 </body>

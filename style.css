@@ -222,12 +222,17 @@ section:hover {
 #hero {
   text-align: center;
   padding: var(--space-2xl) var(--space-lg);
-  background: linear-gradient(135deg, var(--rotary-blue) 0%, var(--rotary-blue-dark) 50%, var(--rotary-blue) 100%);
-  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/hero-background.jpg');  color: white;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   border-radius: 16px;
   margin-bottom: var(--space-xl);
   position: relative;
   overflow: hidden;
+  color: #ffffff;
+  text-align: center;
+  padding: 6rem var(--space-lg);
 }
 
 #hero::before {
@@ -1672,19 +1677,18 @@ a:focus, button:focus, input:focus, textarea:focus {
     color: var(--background-primary); /* Color de texto blanco y legible */
     text-decoration: none;
     font-size: 1.1rem;
-    border-bottom: 1px solid var(--rotary-blue); /* Línea sutil para separar enlaces */
+    border-bottom: 1px solid var(--rotary-blue);
     transition: background-color 0.3s ease;
 }
 
 .menu-principal li a:hover {
-    background-color: var(--rotary-blue); /* Efecto visual al pasar el ratón/tocar */
+    background-color: var(--rotary-blue); 
 }
 
 .menu-principal li:last-child a {
-    border-bottom: none; /* Elimina la línea del último elemento */
+    border-bottom: none; 
 }
 
-    /* 4. Otros Ajustes */
     .tiempo-unidad span {
         font-size: 2rem;
         padding: var(--space-xs) var(--space-sm);
@@ -1703,4 +1707,159 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 html {
     scroll-behavior: smooth;
+}
+
+.info-box-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.info-box-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--rotary-blue);
+    margin-bottom: var(--space-sm);
+}
+.contact-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+}
+.contact-list li {
+    margin-bottom: var(--space-xs);
+    color: var(--text-muted);
+}
+.contact-list i {
+    color: var(--rotary-blue);
+    margin-right: 10px;
+    width: 20px; 
+}
+
+.google-form-container {
+    background-color: var(--background-card);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    text-align: center;
+}
+.google-form-container h3 {
+    margin-top: 0;
+    color: var(--rotary-blue);
+}
+.google-form-container iframe {
+    width: 100%; 
+    border: none;
+    min-height: 800px; 
+}
+
+#pasos-banner {
+    background-color: var(--background-secondary);
+    text-align: center;
+}
+.pasos-grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-lg);
+}
+.paso-card-simple {
+    flex-basis: 300px;
+    text-align: center;
+}
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--rotary-blue);
+    color: var(--rotary-blue);
+    padding: 10px 20px;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+    background-color: var(--rotary-blue);
+    color: #ffffff;
+}
+.requisitos-lista {
+    max-width: 600px;
+    margin: var(--space-md) auto 0;
+    text-align: left;
+    padding: var(--space-md);
+    background-color: var(--background-card);
+    border-radius: var(--border-radius-md);
+}
+.requisitos-lista ul {
+    list-style: none;
+    padding-left: 0;
+}
+.requisitos-lista li {
+    color: var(--text-muted);
+}
+.requisitos-lista i {
+    color: var(--success);
+    margin-right: 10px;
+}
+
+#contacto-grid .contacto-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+@media (min-width: 992px) {
+    #contacto-grid .contacto-grid-container {
+        grid-template-columns: 400px 1fr;
+    }
+}
+.columna-derecha {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+.info-box .box-title {
+    margin-top: 0;
+    color: var(--rotary-blue);
+}
+
+.photo-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 120px; 
+    height: 120px; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    margin: 0 auto var(--space-sm) auto;
+    border: 4px solid var(--rotary-blue); 
+}
+
+.info-box-photo {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 50%; 
+}
+
+section#pasos-banner .paso-card-simple .paso-numero {
+    width: 50px !important;
+    height: 50px !important;
+    background-color: var(--rotary-blue) !important;
+    color: #ffffff !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    border-radius: 50% !important;
+    
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    margin: 0 auto var(--space-md) auto !important;
+    position: static !important; 
+}
+
+.paso-card-simple h3,
+.paso-card-simple p {
+    text-align: center !important;
 }
