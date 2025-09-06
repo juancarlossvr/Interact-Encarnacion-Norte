@@ -1226,10 +1226,9 @@ footer p {
 }
 
 .comites-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--space-md);
-  margin-top: var(--space-xl);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
 }
 
 .comite-card {
@@ -1252,9 +1251,8 @@ footer p {
 
 .proyectos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--space-lg);
-  margin-top: var(--space-xl);
 }
 
 .proyecto-card {
@@ -1586,6 +1584,12 @@ a:focus, button:focus, input:focus, textarea:focus {
         text-align: left;
         align-items: center;
     }
+    .proyectos-grid-full {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    }
+    .proyecto-card-full img {
+        height: 250px; 
+    }
 }
 
 .convocatoria-texto h2 {
@@ -1812,6 +1816,9 @@ html {
     #contacto-grid .contacto-grid-container {
         grid-template-columns: 400px 1fr;
     }
+    .proyectos-grid-full {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Tres columnas en pantallas grandes, más cuadradas */
+    }
 }
 .columna-derecha {
     display: flex;
@@ -1863,3 +1870,84 @@ section#pasos-banner .paso-card-simple .paso-numero {
 .paso-card-simple p {
     text-align: center !important;
 }
+
+.proyectos-grid-full {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+.proyecto-card-full {
+    background-color: var(--background-card);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-color) 0px 4px 12px;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card-full:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-color) 0px 8px 20px;
+}
+
+.proyecto-card-full img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.proyecto-contenido {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.proyecto-contenido h3 {
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+    color: var(--rotary-blue);
+}
+
+.proyecto-contenido p {
+    flex-grow: 1;
+    margin-bottom: var(--space-md);
+}
+
+.proyecto-datos {
+    border-top: 1px solid var(--background-secondary);
+    padding-top: var(--space-md);
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.proyecto-datos span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.proyecto-datos i {
+    color: var(--rotary-blue);
+}
+
+.proyecto-categoria {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: var(--space-md);
+    color: #fff;
+}
+
+.proyecto-categoria.servicio { background-color: #28a745; }
+.proyecto-categoria.capacitacion { background-color: #17a2b8; }
+.proyecto-categoria.colaboracion { background-color: #ffc107; color: var(--text-primary); }
