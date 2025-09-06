@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
-Sitemap:
-https://www.interactencarnacionnorte.org/sitemap.xml
+Disallow:
+
+Sitemap: https://interactencnorte.org/sitemap.xml

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interact Club Encarnación Norte - Inicio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://interactencnorte.org/">
+    <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="description" content="Interact Club Encarnación Norte - Jóvenes líderes comprometidos con el servicio a la comunidad">
     <meta name="keywords" content="Interact, Rotary, Encarnación, voluntariado, juventud, servicio comunitario">
@@ -12,16 +13,21 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Interact Club Encarnación Norte">
+    <meta property="og:description" content="Jóvenes líderes en acción, transformando nuestra comunidad a través del servicio, el liderazgo y el compañerismo.">
+    <meta property="og:image" content="https://interactencnorte.org/img/og-image.jpg">
+    <meta property="og:url" content="https://interactencnorte.org/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <header>
 <nav>
     <div class="logo">
-        <a href="index.html">
-            <img src="img/logo-interact.png" alt="Logo del Interact Club Encarnación Norte">
+        <a href="/">
+            <img src="/img/logo-interact.png" alt="Logo del Interact Club Encarnación Norte">
         </a>
     </div>
-
     <div class="nav-actions">
         <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema">
             <i class="fas fa-moon"></i>
@@ -30,110 +36,99 @@
             <i class="fas fa-bars"></i>
         </button>
     </div>
-    
     <ul class="menu-principal" id="menu-principal">
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="/" aria-current="page">Inicio</a></li>
         <li class="dropdown">
-            <a href="quienes-somos.html">Quiénes somos</a>
+            <a href="/quienes-somos/">Quiénes somos</a>
             <div class="dropdown-content">
-                <a href="quienes-somos.html#que-es">¿Qué es Interact?</a>
-                <a href="quienes-somos.html#mision-vision">Misión y Visión</a>
-                <a href="quienes-somos.html#junta-directiva">Junta Directiva</a>
+                <a href="/quienes-somos/#que-es">¿Qué es Interact?</a>
+                <a href="/quienes-somos/#mision-vision">Misión y Visión</a>
+                <a href="/quienes-somos/#junta-directiva">Junta Directiva</a>
             </div>
         </li>
         <li class="dropdown">
-            <a href="comites-proyectos.html">Comités y Proyectos</a>
+            <a href="/comites-proyectos/">Comités y Proyectos</a>
             <div class="dropdown-content">
-                <a href="comites-proyectos.html#comites">Nuestros Comités</a>
-                <a href="comites-proyectos.html#proyectos">Proyectos Destacados</a>
+                <a href="/comites-proyectos/#comites">Nuestros Comités</a>
+                <a href="/comites-proyectos/#proyectos">Proyectos Destacados</a>
             </div>
         </li>
-        <li><a href="calendario.html">Calendario</a></li> 
-        <li><a href="unete-contacto.html">Únete/Contacto</a></li>
+        <li><a href="/calendario/">Calendario</a></li> 
+        <li><a href="/unete-contacto/">Únete/Contacto</a></li>
     </ul>
 </nav>
 </header>
-
 <main>
     <section id="hero">
         <div class="hero-content">
             <h1>Jóvenes líderes en acción, <span class="highlight">transformando</span> nuestra comunidad.</h1>
             <p>Somos el Interact Club Encarnación Norte, un grupo de jóvenes apasionados por el servicio, el liderazgo y el compañerismo. Descubre cómo marcamos la diferencia.</p>
-            <a href="unete-contacto.html" class="btn-primary">¡Únete a la Aventura!</a>
+            <a href="/unete-contacto/" class="btn-primary">¡Únete a la Aventura!</a>
         </div>
     </section>
-
-<section id="convocatoria" class="section-padding">
-    <div class="convocatoria-container">
-        <div class="convocatoria-texto">
-            <h2><i class="fas fa-hourglass-start"></i> ¡La Convocatoria para Nuevos Aspirantes está Abierta!</h2>
-            <p>Forma parte de la próxima generación de líderes. Tienes hasta el 13 de septiembre para inscribirte y comenzar tu aventura en Interact.</p>
-            <a href="https://forms.gle/a2TvJ3skr6EnWQPQ9" target="_blank" class="btn-primary"><i class="fas fa-edit"></i> Inscríbete Aquí</a>
-        </div>
-        <div class="convocatoria-contador">
-            <h3>El plazo termina en:</h3>
-            <div id="countdown-timer">
-                <div class="tiempo-unidad">
-                    <span id="dias">00</span>
-                    <p>Días</p>
-                </div>
-                <div class="tiempo-unidad">
-                    <span id="horas">00</span>
-                    <p>Horas</p>
-                </div>
-                <div class="tiempo-unidad">
-                    <span id="minutos">00</span>
-                    <p>Minutos</p>
-                </div>
-                <div class="tiempo-unidad">
-                    <span id="segundos">00</span>
-                    <p>Segundos</p>
+    <section id="convocatoria" class="section-padding">
+        <div class="convocatoria-container">
+            <div class="convocatoria-texto">
+                <h2><i class="fas fa-hourglass-start"></i> ¡La Convocatoria para Nuevos Aspirantes está Abierta!</h2>
+                <p>Forma parte de la próxima generación de líderes. Tienes hasta el 13 de septiembre para inscribirte y comenzar tu aventura en Interact.</p>
+                <a href="https://forms.gle/a2TvJ3skr6EnWQPQ9" target="_blank" class="btn-primary"><i class="fas fa-edit"></i> Inscríbete Aquí</a>
+            </div>
+            <div class="convocatoria-contador">
+                <h3>El plazo termina en:</h3>
+                <div id="countdown-timer">
+                    <div class="tiempo-unidad">
+                        <span id="dias">00</span>
+                        <p>Días</p>
+                    </div>
+                    <div class="tiempo-unidad">
+                        <span id="horas">00</span>
+                        <p>Horas</p>
+                    </div>
+                    <div class="tiempo-unidad">
+                        <span id="minutos">00</span>
+                        <p>Minutos</p>
+                    </div>
+                    <div class="tiempo-unidad">
+                        <span id="segundos">00</span>
+                        <p>Segundos</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
     <section id="quienes-somos-intro" class="section-padding">
         <div class="content-with-image">
             <div class="text-content fadeInUp">
                 <h2><i class="fas fa-users"></i> Liderazgo que Inspira</h2>
                 <p>Nuestra misión es clara: brindar a jóvenes la oportunidad de desarrollar sus habilidades de liderazgo mientras descubren el poder del "Servicio sobre sí mismo". Creemos que cada pequeña acción puede generar un gran impacto.</p>
-                <a href="quienes-somos.html" class="btn-secondary">Conoce nuestra historia</a>
+                <a href="/quienes-somos/" class="btn-secondary">Conoce nuestra historia</a>
             </div>
-            <img src="img/grupo-interact.jpeg" alt="Miembros del Interact Club Encarnación Norte sonriendo juntos durante un evento comunitario." class="fadeInUp">
+            <img src="/img/grupo-interact.jpeg" alt="Miembros del Interact Club Encarnación Norte sonriendo juntos durante un evento comunitario." class="fadeInUp" loading="lazy">
         </div>
     </section>
-
-        <section id="proyectos-destacados" class="section-padding">
+    <section id="proyectos-destacados" class="section-padding">
         <h2 class="section-title">Pilares de Nuestra Experiencia</h2>
         <div class="grid-proyectos">
-            
             <div class="card-proyecto">
-                <img src="img/capacitación.jpeg" alt="Marcos Enriquez, Charla de Liderazgo Comunitario(2025/2026).">
+                <img src="/img/capacitación.jpeg" alt="Marcos Enriquez, Charla de Liderazgo Comunitario(2025/2026)." loading="lazy">
                 <h3><i class="fas fa-user-graduate"></i> Capacitación y Liderazgo</h3>
                 <p>Fomentamos el crecimiento personal a través de talleres, charlas y capacitaciones que te preparan para ser un líder del mañana.</p>
             </div>
-
             <div class="card-proyecto">
-                <img src="img/colecta.jpeg" alt="Jóvenes de Interact organizando una colecta para el asilo de ancianos.">
+                <img src="/img/colecta.jpeg" alt="Jóvenes de Interact organizando una colecta para el asilo de ancianos." loading="lazy">
                 <h3><i class="fas fa-hands-helping"></i> Acciones con Propósito</h3>
                 <p>Organizamos y participamos en actividades que generan un impacto positivo, desde colectas solidarias hasta jornadas de apoyo a causas locales.</p>
             </div>
-
             <div class="card-proyecto">
-                <img src="img/dara y jailin.jpeg" alt="Dara y Jailin, socias del club.">
+                <img src="/img/dara y jailin.jpeg" alt="Dara y Jailin, socias del club." loading="lazy">
                 <h3><i class="fas fa-users"></i> Amistad y Conexión</h3>
                 <p>Creamos un espacio de amistad y colaboración. Nuestras reuniones y eventos fortalecen nuestros lazos y nos conectan con una red de jóvenes con los mismos ideales.</p>
             </div>
-
         </div>
     </section>
-    
     <section id="testimonios" class="section-padding">
         <h2 class="section-title">Voces de Nuestra Comunidad</h2>
         <div class="testimonios-grid">
-
             <div class="testimonio-card">
                 <i class="fas fa-quote-left"></i>
                 <blockquote>
@@ -143,7 +138,6 @@
                     <span>Julio Madruga, Past President periodo 2023/2024</span>
                 </cite>
             </div>
-
             <div class="testimonio-card">
                 <i class="fas fa-quote-left"></i>
                 <blockquote>
@@ -153,29 +147,24 @@
                     <span>Marta Garay, beneficiaria</span>
                 </cite>
             </div>
-
         </div>
     </section>
-
     <section id="llamada-accion">
         <div class="llamada-accion">
             <h2><i class="fas fa-bullseye"></i> ¿Listo para ser parte del cambio?</h2>
             <p>Únete a nosotros y descubre cómo puedes hacer la diferencia en tu comunidad mientras desarrollas habilidades de liderazgo y haces nuevos amigos.</p>
             <div class="cta-buttons">
-                <a href="unete-contacto.html#como-unirse" class="btn-primary"><i class="fas fa-user-plus"></i> Únete ahora</a>
-                <a href="unete-contacto.html#contacto" class="btn-secondary"><i class="fas fa-envelope"></i> Contáctanos</a>
+                <a href="/unete-contacto/" class="btn-primary"><i class="fas fa-user-plus"></i> Únete ahora</a>
+                <a href="/unete-contacto/" class="btn-secondary"><i class="fas fa-envelope"></i> Contáctanos</a>
             </div>
         </div>
     </section>
 </main>
-
 <section id="instagram-feed" class="section-padding">
     <h2 class="section-title">Sigue Nuestra Historia en Instagram</h2>
-    
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-c28d9433-7bf6-4a43-9562-a7989d003e7e" data-elfsight-app-lazy></div>
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-c28d9433-7bf6-4a43-9562-a7989d003e7e" data-elfsight-app-lazy></div>
 </section>
-
 <footer>
     <p>© 2025 Interact Club Encarnación Norte. Todos los derechos reservados.</p>
     <div class="redes-sociales-footer">
@@ -187,9 +176,7 @@
         </a>
     </div>
 </footer>
-
-<script src="https://unpkg.com/scrollreveal"></script> 
-
-<script src="script.js"></script>
+<script src="https://unpkg.com/scrollreveal" defer></script> 
+<script src="/script.js" defer></script>
 </body>
 </html>
