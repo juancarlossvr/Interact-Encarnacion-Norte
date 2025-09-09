@@ -1951,3 +1951,179 @@ section#pasos-banner .paso-card-simple .paso-numero {
 .proyecto-categoria.servicio { background-color: #28a745; }
 .proyecto-categoria.capacitacion { background-color: #17a2b8; }
 .proyecto-categoria.colaboracion { background-color: #ffc107; color: var(--text-primary); }
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.event-card {
+    background: var(--background-card);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-color) 0px 4px 15px;
+    padding: var(--space-lg);
+    border-left: 5px solid var(--rotary-blue);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-color) 0px 8px 25px;
+}
+
+.event-card h3 {
+    margin-top: 0;
+    color: var(--rotary-blue);
+}
+
+.event-date {
+    font-weight: bold;
+    color: var(--text-primary);
+    background-color: var(--background-secondary);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: var(--space-md);
+}
+
+.event-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
+
+.event-detail i {
+    color: var(--rotary-blue);
+}
+
+.event-card.past-event {
+    border-left-color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.event-card.past-event h3, 
+.event-card.past-event i {
+    color: var(--text-muted);
+}
+
+.admin-container { 
+    max-width: 900px; 
+    margin: 40px auto; 
+    padding: var(--space-xl); 
+    background: var(--background-card); 
+    border-radius: var(--border-radius-lg); 
+    box-shadow: var(--shadow-color) 0px 6px 20px;
+}
+
+.admin-container .hidden { 
+    display: none; 
+}
+
+.admin-container .tabs { 
+    display: flex; 
+    border-bottom: 2px solid var(--background-secondary); 
+    margin-bottom: var(--space-lg);
+}
+
+.admin-container .tab-button { 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    background: transparent; 
+    border: none; 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: var(--text-muted);
+}
+
+.admin-container .tab-button.active { 
+    color: var(--rotary-blue); 
+    border-bottom: 3px solid var(--rotary-blue);
+}
+
+.admin-container .tab-content { 
+    display: none; 
+}
+
+.admin-container .tab-content.active { 
+    display: block; 
+}
+
+.admin-container input, 
+.admin-container textarea, 
+.admin-container button { 
+    width: 100%; 
+    padding: 12px; 
+    margin-bottom: var(--space-md); 
+    border-radius: var(--border-radius-md); 
+    border: 1px solid var(--background-secondary); 
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif; /* Hereda la fuente de tu sitio */
+}
+
+.admin-container button { 
+    background-color: var(--rotary-blue); 
+    color: white; 
+    cursor: pointer; 
+    border: none; 
+    font-weight: bold; 
+    transition: background-color 0.2s;
+}
+
+.admin-container button:hover { 
+    background-color: var(--rotary-blue-dark);
+}
+
+.admin-container button.danger { 
+    background-color: #dc3545; 
+}
+
+.admin-container button.danger:hover { 
+    background-color: #c82333; 
+}
+
+.admin-container button.secondary { 
+    background-color: var(--text-muted); 
+}
+
+.admin-container button.secondary:hover { 
+    background-color: #495057; 
+}
+
+.admin-container #items-list { 
+    margin-top: var(--space-xl); 
+}
+
+.admin-container .list-item { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: var(--space-md); 
+    border: 1px solid var(--background-secondary); 
+    border-radius: var(--border-radius-md); 
+    margin-bottom: var(--space-sm);
+}
+
+.admin-container .list-item-title { 
+    font-weight: bold; 
+}
+
+.admin-container .list-item-actions button { 
+    width: auto; 
+    padding: 8px 12px; 
+    margin-left: 10px; 
+}
+
+#interactive-calendar {
+    --fc-border-color: var(--background-secondary);
+    --fc-today-bg-color: rgba(0, 118, 168, 0.1);
+    --fc-event-bg-color: var(--rotary-blue);
+    --fc-event-border-color: var(--rotary-blue-dark);
+    --fc-button-bg-color: var(--rotary-blue);
+    --fc-button-active-bg-color: var(--rotary-blue-dark);
+    --fc-button-hover-bg-color: var(--rotary-blue-dark);
+    color: var(--text-primary);
+}

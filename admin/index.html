@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Administración - Interact Club</title>    
+    <link rel="stylesheet" href="/style.css">    
+    <meta name="robots" content="noindex, nofollow">
+    
+    </head>
+<body>
+    <div class="admin-container">
+        <div id="login-view">
+            <h1 style="text-align: center;">Acceso de Administrador</h1>
+            <form id="auth-form">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" required>
+                <button type="submit">Ingresar</button>
+            </form>
+            <p id="login-error" style="color: red; text-align: center;"></p>
+        </div>
+
+        <div id="panel-view" class="hidden">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2>Panel de Control</h2>
+                <button id="logout-btn" style="width: auto; padding: 10px 15px;" class="danger">Cerrar Sesión</button>
+            </div>
+            <hr style="margin: 20px 0;">
+
+            <div class="tabs">
+                <button class="tab-button active" onclick="changeTab('proyectos')">Proyectos</button>
+                <button class="tab-button" onclick="changeTab('calendario')">Calendario</button>
+            </div>
+
+            <div id="proyectos-content" class="tab-content active">
+                <h3>Gestionar Proyectos</h3>
+                <form id="proyectos-form">
+                    <input type="hidden" id="proyecto-id">
+                    <label for="proyecto-title">Título:</label>
+                    <input type="text" id="proyecto-title" required>
+                    <label for="proyecto-date">Fecha:</label>
+                    <input type="date" id="proyecto-date" required>
+                    <label for="proyecto-description">Descripción:</label>
+                    <textarea id="proyecto-description" rows="4" required></textarea>
+                    <label for="proyecto-members">Integrantes (Opcional):</label>
+                    <input type="text" id="proyecto-members">
+                    <label for="proyecto-external_link">Enlace Externo (Instagram, etc.):</label>
+                    <input type="url" id="proyecto-external_link" placeholder="https://...">
+                    <label for="proyecto-image_url">URL de la Imagen:</label>
+                    <input type="text" id="proyecto-image_url" required placeholder="/img/nombre-de-imagen.jpeg">
+                    <button type="submit">Guardar Proyecto</button>
+                    <button type="button" id="proyecto-cancel-edit" class="secondary hidden">Cancelar Edición</button>
+                </form>
+            </div>
+
+            <div id="calendario-content" class="tab-content">
+                <h3>Gestionar Eventos del Calendario</h3>
+                <form id="eventos-form">
+                    <input type="hidden" id="evento-id">
+                    <label for="evento-title">Título del Evento:</label>
+                    <input type="text" id="evento-title" required>
+                    <label for="evento-date">Fecha:</label>
+                    <input type="date" id="evento-date" required>
+                    <label for="evento-time">Hora:</label>
+                    <input type="time" id="evento-time" required>
+                    <label for="evento-place">Lugar:</label>
+                    <input type="text" id="evento-place" required>
+                    <label for="evento-description">Descripción (Opcional):</label>
+                    <textarea id="evento-description" rows="3"></textarea>
+                    <button type="submit">Guardar Evento</button>
+                    <button type="button" id="evento-cancel-edit" class="secondary hidden">Cancelar Edición</button>
+                </form>
+            </div>
+            
+            <div id="items-list"></div>
+            <hr>
+            <button id="generate-file-btn">Generar y Descargar Archivo JSON</button>
+        </div>
+    </div>
+
+    <script src="/js/admin.js"></script>
+</body>
+</html>
