@@ -1,0 +1,25 @@
+{
+  "name": "interact-club-encarnacion-norte",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juancarlossvr/Interact-Encarnacion-Norte.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juancarlossvr/Interact-Encarnacion-Norte/issues"
+  },
+  "homepage": "https://github.com/juancarlossvr/Interact-Encarnacion-Norte#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "multer": "^2.0.2"
+  }
+}

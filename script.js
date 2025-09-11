@@ -139,3 +139,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 }); 
+
+function inicializarCarruseles() {
+    const carousels = document.querySelectorAll('.proyecto-carousel');
+
+    carousels.forEach(carousel => {
+        const slidesContainer = carousel.querySelector('.carousel-slides');
+        const prevBtn = carousel.querySelector('.prev-btn');
+        const nextBtn = carousel.querySelector('.next-btn');
+
+        if (!prevBtn || !nextBtn) {
+            return;
+        }
+
+        const slides = Array.from(slidesContainer.children);
+        const totalSlides = slides.length;
+        let currentIndex = 0;
+
+        function mostrarSlide(index) {
+            slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+            mostrarSlide(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+            mostrarSlide(currentIndex);
+        });
+
+        mostrarSlide(currentIndex);
+    });
+}
+
+function inicializarCarruseles() {
+    const carousels = document.querySelectorAll('.proyecto-carousel');
+
+    carousels.forEach(carousel => {
+        const slidesContainer = carousel.querySelector('.carousel-slides');
+        const prevBtn = carousel.querySelector('.prev-btn');
+        const nextBtn = carousel.querySelector('.next-btn');
+
+        if (!slidesContainer || !prevBtn || !nextBtn) {
+            return; // No hacer nada si no hay botones (proyectos de una sola foto)
+        }
+
+        const slides = Array.from(slidesContainer.children);
+        const totalSlides = slides.length;
+        let currentIndex = 0;
+
+        function mostrarSlide(index) {
+            slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+            mostrarSlide(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+            mostrarSlide(currentIndex);
+        });
+
+        mostrarSlide(currentIndex); // Mostrar la primera imagen al cargar
+    });
+}

@@ -47,8 +47,11 @@
                     <input type="text" id="proyecto-members">
                     <label for="proyecto-external_link">Enlace Externo (Instagram, etc.):</label>
                     <input type="url" id="proyecto-external_link" placeholder="https://...">
-                    <label for="proyecto-image_url">URL de la Imagen:</label>
-                    <input type="text" id="proyecto-image_url" required placeholder="/img/nombre-de-imagen.jpeg">
+                    <label for="proyecto-imagenes">Imágenes del Proyecto (selecciona una o varias):</label>
+                    <input type="file" id="proyecto-imagenes" accept="image/png, image/jpeg, image/webp" multiple>
+                    
+                    <div id="imagenes-preview" style="margin-top: 10px;"></div>
+                    
                     <button type="submit">Guardar Proyecto</button>
                     <button type="button" id="proyecto-cancel-edit" class="secondary hidden">Cancelar Edición</button>
                 </form>
