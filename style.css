@@ -2361,3 +2361,48 @@ section#pasos-banner .paso-card-simple .paso-numero {
         transform: translateX(100%);
     }
 }
+
+.bienvenida-container {
+    max-width: 800px; /* Limita el ancho para que la tarjeta no sea demasiado grande en pantallas anchas */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.bienvenida-card {
+    background-color: var(--background-color);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--primary-color); /* Un detalle con tu color principal */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bienvenida-card:hover {
+    transform: translateY(-10px); /* Efecto sutil al pasar el mouse */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.bienvenida-icon {
+    font-size: 3.5em;
+    color: var(--secondary-color); /* Usamos el color secundario (amarillo) para el ícono */
+    margin-bottom: 20px;
+}
+
+.bienvenida-card h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    color: var(--primary-color); /* Usamos el color principal para el título */
+}
+
+.bienvenida-card p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.bienvenida-cta {
+    font-weight: 600; /* Hacemos la última línea un poco más audaz */
+    color: var(--text-color);
+    font-size: 1.2em !important; /* !important para asegurar que sobreescriba el estilo anterior */
+}
