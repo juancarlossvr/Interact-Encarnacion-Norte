@@ -57,5 +57,30 @@
       "/img/uploads/projectImage-1757975733651-313124614.JPG",
       "/img/uploads/projectImage-1757975733708-151249334.JPG"
     ]
+  },
+  {
+    "id": 1760967217617,
+    "title": "CETECUL Mexico 2025",
+    "date": "2025-09-27",
+    "description": "CETECUL México 2025 reunió a jóvenes de distintos clubes Interact de la región en una tarde llena de cultura, alegría y compañerismo. Con la participación especial de los clubes Interact de Cambyretá y Encarnación, la actividad se destacó por promover la integración, el fortalecimiento de lazos y el espíritu de amistad rotaria entre los asistentes.\nEntre música, danzas típicas, gastronomía y tradiciones mexicanas, los participantes vivieron una experiencia única que reflejó los valores de unidad, servicio y trabajo en equipo, reafirmando el compromiso de los clubes con la comunidad y con el crecimiento conjunto.",
+    "members": "Interact Club Encarnación Norte, Interact Club Cambyreta y Interact Club Encarnación",
+    "external_link": "",
+    "imagenes": [
+      "/img/uploads/projectImage-1760967216139-612047961.JPG",
+      "/img/uploads/projectImage-1760967216960-875498805.JPG"
+    ]
+  },
+  {
+    "id": 1760967801539,
+    "title": "Asunción de socios ",
+    "date": "2025-10-18",
+    "description": "Durante nuestro evento de asunción, dimos la bienvenida a cinco nuevos integrantes que se unen a la familia del Interact Club Encarnación Norte. Este momento representa el crecimiento de nuestro club y el fortalecimiento del compromiso con los valores de servicio, liderazgo y amistad.\n\nCada nuevo socio aporta su energía, entusiasmo y deseos de contribuir positivamente a la comunidad, reafirmando el espíritu que nos une como club y como jóvenes agentes de cambio.",
+    "members": "Interact Club Encarnación Norte",
+    "external_link": "",
+    "imagenes": [
+      "/img/uploads/projectImage-1760967801348-392513287.JPG",
+      "/img/uploads/projectImage-1760967801412-834686556.JPG",
+      "/img/uploads/projectImage-1760967801485-464494440.JPG"
+    ]
   }
 ]
