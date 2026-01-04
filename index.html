@@ -68,13 +68,26 @@
     </section>
     <section id="bienvenida" class="section-padding">
     <div class="bienvenida-container">
-        <div class="bienvenida-card fadeInUp">
-            <div class="bienvenida-icon">
-                <i class="fas fa-users"></i>
+        <div class="bienvenida-card battery-card fadeInUp">
+            <div class="battery-header">
+                <i class="fas fa-bolt" style="color: var(--rotary-gold); font-size: 2rem;"></i>
+                <h2>Recargando Energías...</h2>
             </div>
-            <h2>¡Nuestra Familia Crece!</h2>
-            <p>La jornada de aspirantes ha finalizado y estamos felices de darle la bienvenida a la nueva generación de líderes que se suma a nuestro club.</p>
-            <p class="bienvenida-cta">¡Listos para crear un impacto positivo juntos!</p>
+            
+            <p>Estamos en una breve pausa de verano, preparando todo para un 2026 inolvidable.</p>
+            
+            <div class="battery-wrapper">
+                <div class="battery-body">
+                    <div class="battery-fill" id="barra-energia"></div>
+                    <div class="battery-text" id="texto-porcentaje">0%</div>
+                </div>
+                <div class="battery-nip"></div>
+            </div>
+
+            <p class="mt-3">
+                <strong>Próxima Reunión:</strong> Sábado 7 de Febrero<br>
+                <span id="mensaje-estado" style="font-size: 0.9rem; opacity: 0.8;">Calculando nivel de carga...</span>
+            </p>
         </div>
     </div>
 </section>

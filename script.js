@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function validateForm() {
         let isValid = true;
- 
         return isValid;
     }
+
     const themeToggle = document.getElementById('theme-toggle');
 
     if (themeToggle) {
@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     iniciarContador(); 
 
-
     const iniciarAnimaciones = () => {
         if (typeof ScrollReveal === 'undefined') {
             console.error('La librería ScrollReveal no está cargada.');
@@ -138,6 +137,39 @@ document.addEventListener('DOMContentLoaded', () => {
             requisitosToggle.querySelector('i').classList.toggle('fa-chevron-up');
         });
     }
+
+    const barra = document.getElementById("barra-energia");
+    const texto = document.getElementById("texto-porcentaje");
+    const mensaje = document.getElementById("mensaje-estado");
+
+    if (barra && texto && mensaje) {
+        const fechaInicio = new Date("2026-01-01").getTime();
+        const fechaFin = new Date("2026-02-07").getTime();
+        const hoy = new Date().getTime();
+
+        let porcentaje = 0;
+        
+        if (hoy >= fechaFin) {
+            porcentaje = 100;
+            mensaje.innerText = "¡Batería llena! Estamos listos para comenzar.";
+            barra.style.background = "var(--success)";
+        } else {
+            const totalTiempo = fechaFin - fechaInicio;
+            const tiempoPasado = hoy - fechaInicio;
+            
+            porcentaje = Math.round((tiempoPasado / totalTiempo) * 100);
+            
+            if (porcentaje < 5) porcentaje = 5;
+            if (porcentaje > 100) porcentaje = 100;
+
+            mensaje.innerText = "Cargando entusiasmo para el reencuentro...";
+        }
+
+        setTimeout(() => {
+            barra.style.width = porcentaje + "%";
+            texto.innerText = porcentaje + "%";
+        }, 500);
+    }
 }); 
 
 function inicializarCarruseles() {
@@ -148,7 +180,7 @@ function inicializarCarruseles() {
         const prevBtn = carousel.querySelector('.prev-btn');
         const nextBtn = carousel.querySelector('.next-btn');
 
-        if (!prevBtn || !nextBtn) {
+        if (!slidesContainer || !prevBtn || !nextBtn) {
             return;
         }
 
@@ -171,39 +203,5 @@ function inicializarCarruseles() {
         });
 
         mostrarSlide(currentIndex);
-    });
-}
-
-function inicializarCarruseles() {
-    const carousels = document.querySelectorAll('.proyecto-carousel');
-
-    carousels.forEach(carousel => {
-        const slidesContainer = carousel.querySelector('.carousel-slides');
-        const prevBtn = carousel.querySelector('.prev-btn');
-        const nextBtn = carousel.querySelector('.next-btn');
-
-        if (!slidesContainer || !prevBtn || !nextBtn) {
-            return; // No hacer nada si no hay botones (proyectos de una sola foto)
-        }
-
-        const slides = Array.from(slidesContainer.children);
-        const totalSlides = slides.length;
-        let currentIndex = 0;
-
-        function mostrarSlide(index) {
-            slidesContainer.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
-            mostrarSlide(currentIndex);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
-            mostrarSlide(currentIndex);
-        });
-
-        mostrarSlide(currentIndex); // Mostrar la primera imagen al cargar
     });
 }
