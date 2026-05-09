@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const contactForm = document.getElementById('contact-form');
-    
+
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             if (!validateForm()) {
-                event.preventDefault(); 
+                event.preventDefault();
             }
         });
     }
@@ -58,41 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const iniciarContador = () => {
-        const fechaLimite = new Date('September 13, 2025 17:00:00').getTime();
-        
-        const diasEl = document.getElementById('dias');
-        const horasEl = document.getElementById('horas');
-        const minutosEl = document.getElementById('minutos');
-        const segundosEl = document.getElementById('segundos');
-
-        if (!diasEl) return; 
-
-        const intervalo = setInterval(() => {
-            const ahora = new Date().getTime();
-            const distancia = fechaLimite - ahora;
-
-            if (distancia < 0) {
-                clearInterval(intervalo);
-                document.getElementById('countdown-timer').innerHTML = "<h4>¡El plazo ha terminado!</h4>";
-                return;
-            }
-
-            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-            diasEl.innerText = dias < 10 ? '0' + dias : dias;
-            horasEl.innerText = horas < 10 ? '0' + horas : horas;
-            minutosEl.innerText = minutos < 10 ? '0' + minutos : minutos;
-            segundosEl.innerText = segundos < 10 ? '0' + segundos : segundos;
-
-        }, 1000);
-    };
-
-    iniciarContador(); 
-
     const iniciarAnimaciones = () => {
         if (typeof ScrollReveal === 'undefined') {
             console.error('La librería ScrollReveal no está cargada.');
@@ -103,28 +68,24 @@ document.addEventListener('DOMContentLoaded', () => {
             distance: '60px',
             duration: 2000,
             delay: 200,
-            reset: false 
+            reset: false
         });
 
         sr.reveal('.section-title, .section-subtitle', { origin: 'top' });
-
         sr.reveal('#hero h1', { delay: 400, origin: 'left' });
         sr.reveal('#hero p', { delay: 500, origin: 'right' });
         sr.reveal('#hero .btn-primary', { delay: 600, origin: 'bottom' });
-        
         sr.reveal('.convocatoria-texto', { origin: 'left' });
         sr.reveal('.convocatoria-contador', { origin: 'right' });
-
-        sr.reveal('.card-proyecto, .testimonio-card, .miembro-card, .paso-card, .prueba-item', { 
-            interval: 150, 
-            origin: 'bottom' 
+        sr.reveal('.card-proyecto, .testimonio-card, .miembro-card, .paso-card, .prueba-item', {
+            interval: 150,
+            origin: 'bottom'
         });
-        
         sr.reveal('.info-box', { origin: 'left' });
         sr.reveal('.form-box', { origin: 'right' });
     };
-    
-    iniciarAnimaciones(); 
+
+    iniciarAnimaciones();
 
     const requisitosToggle = document.getElementById('requisitos-toggle');
     const requisitosOficiales = document.getElementById('requisitos-oficiales');
@@ -138,39 +99,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const barra = document.getElementById("barra-energia");
-    const texto = document.getElementById("texto-porcentaje");
-    const mensaje = document.getElementById("mensaje-estado");
+    const iniciarCountdownInterpromo = () => {
+        const target = new Date('2026-06-05T08:00:00');
+        const cdDias  = document.getElementById('cd-dias');
+        const cdHoras = document.getElementById('cd-horas');
+        const cdMin   = document.getElementById('cd-min');
+        const cdSeg   = document.getElementById('cd-seg');
 
-    if (barra && texto && mensaje) {
-        const fechaInicio = new Date("2026-01-01").getTime();
-        const fechaFin = new Date("2026-02-07").getTime();
-        const hoy = new Date().getTime();
+        if (!cdDias) return;
 
-        let porcentaje = 0;
-        
-        if (hoy >= fechaFin) {
-            porcentaje = 100;
-            mensaje.innerText = "¡Batería llena! Estamos listos para comenzar.";
-            barra.style.background = "var(--success)";
-        } else {
-            const totalTiempo = fechaFin - fechaInicio;
-            const tiempoPasado = hoy - fechaInicio;
-            
-            porcentaje = Math.round((tiempoPasado / totalTiempo) * 100);
-            
-            if (porcentaje < 5) porcentaje = 5;
-            if (porcentaje > 100) porcentaje = 100;
+        const tick = () => {
+            const diff = target - new Date();
+            if (diff <= 0) {
+                document.getElementById('interpromo-countdown').innerHTML =
+                    '<p style="font-weight:700;color:var(--rotary-gold)">¡El evento ya comenzó! 🔥</p>';
+                return;
+            }
+            const d = Math.floor(diff / 86400000);
+            const h = Math.floor((diff % 86400000) / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
 
-            mensaje.innerText = "Cargando entusiasmo para el reencuentro...";
-        }
+            cdDias.textContent  = String(d).padStart(2, '0');
+            cdHoras.textContent = String(h).padStart(2, '0');
+            cdMin.textContent   = String(m).padStart(2, '0');
+            cdSeg.textContent   = String(s).padStart(2, '0');
+        };
 
-        setTimeout(() => {
-            barra.style.width = porcentaje + "%";
-            texto.innerText = porcentaje + "%";
-        }, 500);
-    }
-}); 
+        tick();
+        setInterval(tick, 1000);
+    };
+
+    iniciarCountdownInterpromo();
+
+});
 
 function inicializarCarruseles() {
     const carousels = document.querySelectorAll('.proyecto-carousel');
@@ -180,9 +142,7 @@ function inicializarCarruseles() {
         const prevBtn = carousel.querySelector('.prev-btn');
         const nextBtn = carousel.querySelector('.next-btn');
 
-        if (!slidesContainer || !prevBtn || !nextBtn) {
-            return;
-        }
+        if (!slidesContainer || !prevBtn || !nextBtn) return;
 
         const slides = Array.from(slidesContainer.children);
         const totalSlides = slides.length;
